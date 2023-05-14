@@ -13,17 +13,14 @@ import constants.MessageConst;
 import constants.PropertyConst;
 import services.EmployeeService;
 
-/**
- * 従業員に関わる処理を行うActionクラス
- *
- */
+
+ //従業員に関わる処理を行うActionクラス
+
 public class EmployeeAction extends ActionBase {
 
     private EmployeeService service;
 
-    /**
-     * メソッドを実行する
-     */
+
     @Override
     public void process() throws ServletException, IOException {
 
@@ -35,11 +32,7 @@ public class EmployeeAction extends ActionBase {
         service.close();
     }
 
-    /**
-     * 一覧画面を表示する
-     * @throws ServletException
-     * @throws IOException
-     */
+
     public void index() throws ServletException, IOException {
 
         //管理者かどうかのチェック
@@ -71,11 +64,7 @@ public class EmployeeAction extends ActionBase {
 
     }
 
-    /**
-     * 新規登録画面を表示する
-     * @throws ServletException
-     * @throws IOException
-     */
+
     public void entryNew() throws ServletException, IOException {
 
         //管理者かどうかのチェック
@@ -88,11 +77,7 @@ public class EmployeeAction extends ActionBase {
         }
     }
 
-    /**
-     * 新規登録を行う
-     * @throws ServletException
-     * @throws IOException
-     */
+
     public void create() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック //管理者かどうかのチェック
@@ -138,11 +123,7 @@ public class EmployeeAction extends ActionBase {
         }
     }
 
-    /**
-     * 詳細画面を表示する
-     * @throws ServletException
-     * @throws IOException
-     */
+
     public void show() throws ServletException, IOException {
 
         //管理者かどうかのチェック
@@ -166,11 +147,6 @@ public class EmployeeAction extends ActionBase {
 
     }
 
-    /**
-     * 編集画面を表示する
-     * @throws ServletException
-     * @throws IOException
-     */
     public void edit() throws ServletException, IOException {
 
         //管理者かどうかのチェック
@@ -195,11 +171,7 @@ public class EmployeeAction extends ActionBase {
         }
     }
 
-    /**
-     * 更新を行う
-     * @throws ServletException
-     * @throws IOException
-     */
+
     public void update() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック、管理者かどうかのチェック
@@ -242,11 +214,6 @@ public class EmployeeAction extends ActionBase {
         }
     }
 
-    /**
-     * 論理削除を行う
-     * @throws ServletException
-     * @throws IOException
-     */
     public void destroy() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック、管理者かどうかのチェック
@@ -263,12 +230,7 @@ public class EmployeeAction extends ActionBase {
         }
     }
 
-    /**
-     * ログイン中の従業員が管理者かどうかチェックし、管理者でなければエラー画面を表示
-     * true: 管理者 false: 管理者ではない
-     * @throws ServletException
-     * @throws IOException
-     */
+
     private boolean checkAdmin() throws ServletException, IOException {
 
         //セッションからログイン中の従業員情報を取得

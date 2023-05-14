@@ -22,21 +22,12 @@ public enum MessageConst {
     E_NOCONTENT("内容を入力してください。");
 
 
-    /**
-     * 文字列
-     */
     private final String text;
 
-    /**
-     * コンストラクタ
-     */
     private MessageConst(final String text) {
         this.text = text;
     }
 
-    /**
-     * 値(文字列)取得
-     */
     public String getMessage() {
         return this.text;
     }
