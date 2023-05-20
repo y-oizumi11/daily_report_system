@@ -68,4 +68,8 @@ public class Employee {
     @Column(name = JpaConst.EMP_COL_DELETE_FLAG, nullable = false)
     private Integer deleteFlag;
 
+    //以下承認者追記(権限なし：0、権限あり：1）
+    @Column(name = JpaConst.EMP_COL_MGR_FLAG, nullable = false)
+    private Integer mgrFlag;
+
 }

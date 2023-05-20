@@ -70,4 +70,17 @@ public class Report {
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
 
+    //以下承認関係追記
+    @Column(name = JpaConst.REP_COL_COMFIRMED_AT, nullable = false)
+    private LocalDateTime comfirmedAt;
+    //承認（未確認：０、承認：１）
+    @Column(name = JpaConst.REP_COL_APPROVED_FLAG, nullable = false)
+    private Integer approved_flag;
+    //保留（未確認：０、保留：１）
+    @Column(name = JpaConst.REP_COL_PENDING_FLAG, nullable = false)
+    private Integer pending_flag;
+    //差し戻し（未確認：０、差し戻し：１）
+    @Column(name = JpaConst.REP_COL_DISAPPROVED_FLAG, nullable = false)
+    private Integer disapproved_flag;
+
 }

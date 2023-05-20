@@ -44,9 +44,9 @@ public interface JpaConst {
 
     //日報テーブル追記
     String REP_COL_COMFIRMED_AT = "comfirmed_at"; //確認日時
-    String REP_COL_APPROVED_FLAG = "approved_at";
-    String REP_COL_PENDING_FLAG = "pending_at";
-    String REP_COL_DISAPPROVED_FLAG = "disapproved_at";
+    String REP_COL_APPROVED_FLAG = "approved_flag";
+    String REP_COL_PENDING_FLAG = "pending_flag";
+    String REP_COL_DISAPPROVED_FLAG = "disapproved_flag";
 
     //承認済み、追記
     int REP_APPROVED = 1;
