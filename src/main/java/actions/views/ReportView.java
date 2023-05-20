@@ -27,4 +27,13 @@ public class ReportView {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+    //確認日追記
+    private LocalDateTime comfirmedAt;
+    //承認追記
+    private Integer approvedFlag;
+    //保留追記
+    private Integer pendingFlag;
+    //差し戻し追記
+    private Integer disapprovedFlag;
+
 }

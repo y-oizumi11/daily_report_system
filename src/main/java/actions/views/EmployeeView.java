@@ -28,5 +28,8 @@ public class EmployeeView {
 
     private Integer deleteFlag;
 
+    //追記
+    private Integer mgrFlag;
+
 
 }
