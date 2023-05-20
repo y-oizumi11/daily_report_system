@@ -22,11 +22,14 @@ public interface JpaConst {
     String EMP_COL_CREATED_AT = "created_at"; //登録日時
     String EMP_COL_UPDATED_AT = "updated_at"; //更新日時
     String EMP_COL_DELETE_FLAG = "delete_flag"; //削除フラグ
+    String EMP_COL_MGR_FLAG = "mgr_flag"; //承認権限 追記
 
     int ROLE_ADMIN = 1; //管理者権限ON(管理者)
     int ROLE_GENERAL = 0; //管理者権限OFF(一般)
     int EMP_DEL_TRUE = 1; //削除フラグON(削除済み)
     int EMP_DEL_FALSE = 0; //削除フラグOFF(現役)
+    int ROLE_MGR = 1; //承認権限ON 追記
+    int ROLE_NOT_MGR = 0; //承認権限OFF 追記
 
     //日報テーブル
     String TABLE_REP = "reports"; //テーブル名
@@ -38,6 +41,25 @@ public interface JpaConst {
     String REP_COL_CONTENT = "content"; //日報の内容
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
+
+    //日報テーブル追記
+    String REP_COL_COMFIRMED_AT = "comfirmed_at"; //確認日時
+    String REP_COL_APPROVED_FLAG = "approved_at";
+    String REP_COL_PENDING_FLAG = "pending_at";
+    String REP_COL_DISAPPROVED_FLAG = "disapproved_at";
+
+    //承認済み、追記
+    int REP_APPROVED = 1;
+    int REP_NOT_APPROVED =0;
+
+    //保留、追記
+    int REP_PENDING= 1;
+    int REP_NOT_PENDING =0;
+
+    //差し戻し、追記
+    int REP_DISAPPROVED= 1;
+    int REP_NOT_DISAPPROVED =0;
+
 
     //Entity名
     String ENTITY_EMP = "employee"; //従業員

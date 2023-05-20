@@ -65,6 +65,7 @@ public class EmployeeService extends ServiceBase {
                 .setParameter(JpaConst.JPQL_PARM_CODE, code)
                 .getSingleResult();
         return employees_count;
+        
     }
 
      //画面から入力された従業員の登録内容を元にデータを1件作成し、従業員テーブルに登録する

@@ -27,10 +27,15 @@ public enum AttributeConst {
     EMP_PASS("password"),
     EMP_NAME("name"),
     EMP_ADMIN_FLG("admin_flag"),
+    EMP_MGR_FLG("mgr_flag"), //追記
 
     //管理者フラグ
     ROLE_ADMIN(1),
     ROLE_GENERAL(0),
+
+    //マネージャーフラグ（追記）
+    ROLE_MGR(1),
+    ROLE_NOT_MGR(0),
 
     //削除フラグ
     DEL_FLAG_TRUE(1),
@@ -43,7 +48,20 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content_msg");
+    REP_CONTENT("content_msg"),
+    REP_COMFIRM("comfirmed_date"), //追記
+
+    //承認済み、追記
+    REP_APPROVED(1),
+    REP_NOT_APPROVED(0),
+
+    //保留、追記
+    REP_PENDING(1),
+    REP_NOT_PENDING(0),
+
+    //差し戻し、追記
+    REP_DISAPPROVED(1),
+    REP_NOT_DISAPPROVED(0);
 
     private final String text;
     private final Integer i;
