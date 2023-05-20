@@ -26,7 +26,12 @@ public class EmployeeConverter {
                         ? null
                         : ev.getDeleteFlag() == AttributeConst.DEL_FLAG_TRUE.getIntegerValue()
                                 ? JpaConst.EMP_DEL_TRUE
-                                : JpaConst.EMP_DEL_FALSE);
+                                : JpaConst.EMP_DEL_FALSE,
+                ev.getMgrFlag() == null
+                 ? null
+                 : ev.getMgrFlag() == AttributeConst.EMP_MGR_FLG.getIntegerValue()
+                     ? JpaConst.ROLE_MGR
+                     : JpaConst.ROLE_NOT_MGR);
     }
 
     public static EmployeeView toView(Employee e) {
@@ -51,7 +56,12 @@ public class EmployeeConverter {
                         ? null
                         : e.getDeleteFlag() == JpaConst.EMP_DEL_TRUE
                                 ? AttributeConst.DEL_FLAG_TRUE.getIntegerValue()
-                                : AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
+                                : AttributeConst.DEL_FLAG_FALSE.getIntegerValue(),
+                e.getMgrFlag() == null
+                    ? null
+                    : e.getMgrFlag() == JpaConst.ROLE_MGR
+                        ? AttributeConst.ROLE_MGR.getIntegerValue()
+                        : AttributeConst.ROLE_NOT_MGR.getIntegerValue());
     }
 
     public static List<EmployeeView> toViewList(List<Employee> list) {
@@ -73,6 +83,7 @@ public class EmployeeConverter {
         e.setCreatedAt(ev.getCreatedAt());
         e.setUpdatedAt(ev.getUpdatedAt());
         e.setDeleteFlag(ev.getDeleteFlag());
+        e.setMgrFlag(ev.getMgrFlag());
 
     }
 
