@@ -33,13 +33,13 @@ public enum AttributeConst {
     ROLE_ADMIN(1),
     ROLE_GENERAL(0),
 
-    //マネージャーフラグ（追記）
-    ROLE_MGR(1),
-    ROLE_NOT_MGR(0),
-
     //削除フラグ
     DEL_FLAG_TRUE(1),
     DEL_FLAG_FALSE(0),
+
+    //マネージャーフラグ（追記）
+    ROLE_MGR(1),
+    ROLE_NOT_MGR(0),
 
     //日報管理
     REPORT("report"),

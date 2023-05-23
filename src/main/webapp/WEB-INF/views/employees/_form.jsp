@@ -28,12 +28,12 @@
 <br /><br />
 
 <label for="${AttributeConst.EMP_ADMIN_FLG.getValue()}">権限</label><br />
-<select name="${AttributeConst.EMP_ADMIN_FLG.getValue()}" id="${AttributeConst.EMP_ADMIN_FLG.getValue()}">
-    <option value="${AttributeConst.ROLE_GENERAL.getIntegerValue()}"<c:if test="${employee.adminFlag == AttributeConst.ROLE_GENERAL.getIntegerValue()}"> selected</c:if>>一般</option>
-    <option value="${AttributeConst.ROLE_ADMIN.getIntegerValue()}"<c:if test="${employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}"> selected</c:if>>管理者</option>
-    <option value="${AttributeConst.ROLE_MGR.getIntegerValue()}"<c:if test="${employee.mgrFlag == AttributeConst.ROLE_MGR.getIntegerValue()}">selected</c:if>>承認者</option>
-</select>
+    <input type="radio" name="${AttributeConst.EMP_ADMIN_FLG.getValue()}" id="${AttributeConst.EMP_ADMIN_FLG.getValue()}" value="${AttributeConst.ROLE_GENERAL.getIntegerValue()}">一般
+    <input type="radio" name="${AttributeConst.EMP_ADMIN_FLG.getValue()}" id="${AttributeConst.EMP_ADMIN_FLG.getValue()}" value="${AttributeConst.ROLE_ADMIN.getIntegerValue()}">管理者
+    <label for="${AttributeConst.EMP_MGR_FLG.getValue()}"></label>
+    <input type="radio" name="${AttributeConst.EMP_MGR_FLG.getValue()}" id="${AttributeConst.EMP_MGR_FLG.getValue()}" value="${AttributeConst.ROLE_MGR.getIntegerValue()}">承認者
 <br /><br />
+
 <input type="hidden" name="${AttributeConst.EMP_ID.getValue()}" value="${employee.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>
