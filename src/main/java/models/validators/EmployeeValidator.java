@@ -57,14 +57,14 @@ public class EmployeeValidator {
         return "";
     }
 
-    
+
     private static long isDuplicateEmployee(EmployeeService service, String code) {
 
         long employeesCount = service.countByCode(code);
         return employeesCount;
     }
 
-   
+
     private static String validateName(String name) {
 
         if (name == null || name.equals("")) {
@@ -75,7 +75,7 @@ public class EmployeeValidator {
         return "";
     }
 
-   
+
     private static String validatePassword(String password, Boolean passwordCheckFlag) {
 
         //入力チェックを実施 かつ 入力値がなければエラーメッセージを返却

@@ -50,6 +50,9 @@ public enum AttributeConst {
     REP_TITLE("title"),
     REP_CONTENT("content_msg"),
     REP_COMFIRM("comfirmed_date"), //追記
+    REP_APPROVED_FLAG("approved_flag"),
+    REP_PENDING_FLAG("pending_flag"),
+    REP_DISAPPROVED_FLAG("disapproved_flag"),
 
     //承認済み、追記
     REP_APPROVED(1),

@@ -14,11 +14,17 @@ import constants.JpaConst;
 import constants.MessageConst;
 import services.ReportService;
 
-
+/**
+ * 日報に関する処理を行うActionクラス
+ *
+ */
 public class ReportAction extends ActionBase {
 
     private ReportService service;
 
+    /**
+     * メソッドを実行する
+     */
     @Override
     public void process() throws ServletException, IOException {
 
@@ -29,7 +35,11 @@ public class ReportAction extends ActionBase {
         service.close();
     }
 
-
+    /**
+     * 一覧画面を表示する
+     * @throws ServletException
+     * @throws IOException
+     */
     public void index() throws ServletException, IOException {
 
         //指定されたページ数の一覧画面に表示する日報データを取得
@@ -55,7 +65,11 @@ public class ReportAction extends ActionBase {
         forward(ForwardConst.FW_REP_INDEX);
     }
 
-
+    /**
+     * 新規登録画面を表示する
+     * @throws ServletException
+     * @throws IOException
+     */
     public void entryNew() throws ServletException, IOException {
 
         putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
@@ -70,7 +84,11 @@ public class ReportAction extends ActionBase {
 
     }
 
-
+    /**
+     * 新規登録を行う
+     * @throws ServletException
+     * @throws IOException
+     */
     public void create() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック
@@ -95,10 +113,6 @@ public class ReportAction extends ActionBase {
                     day,
                     getRequestParam(AttributeConst.REP_TITLE),
                     getRequestParam(AttributeConst.REP_CONTENT),
-                    null,
-                    null,
-                    null,
-                    null, //以下追記
                     null,
                     null);
 
@@ -127,7 +141,11 @@ public class ReportAction extends ActionBase {
         }
     }
 
-
+    /**
+     * 詳細画面を表示する
+     * @throws ServletException
+     * @throws IOException
+     */
     public void show() throws ServletException, IOException {
 
         //idを条件に日報データを取得する
@@ -146,7 +164,11 @@ public class ReportAction extends ActionBase {
         }
     }
 
-
+    /**
+     * 編集画面を表示する
+     * @throws ServletException
+     * @throws IOException
+     */
     public void edit() throws ServletException, IOException {
 
         //idを条件に日報データを取得する
@@ -171,7 +193,11 @@ public class ReportAction extends ActionBase {
 
     }
 
-
+    /**
+     * 更新を行う
+     * @throws ServletException
+     * @throws IOException
+     */
     public void update() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック
@@ -210,4 +236,6 @@ public class ReportAction extends ActionBase {
         }
     }
 
+
 }
+
