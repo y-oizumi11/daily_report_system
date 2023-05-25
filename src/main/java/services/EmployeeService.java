@@ -65,7 +65,7 @@ public class EmployeeService extends ServiceBase {
                 .setParameter(JpaConst.JPQL_PARM_CODE, code)
                 .getSingleResult();
         return employees_count;
-        
+
     }
 
      //画面から入力された従業員の登録内容を元にデータを1件作成し、従業員テーブルに登録する
@@ -123,6 +123,7 @@ public class EmployeeService extends ServiceBase {
 
         savedEmp.setName(ev.getName()); //変更後の氏名を設定する
         savedEmp.setAdminFlag(ev.getAdminFlag()); //変更後の管理者フラグを設定する
+        savedEmp.setMgrFlag(ev.getMgrFlag());//追記変更後の承認者フラグを設定する
 
         //更新日時に現在時刻を設定する
         LocalDateTime today = LocalDateTime.now();
