@@ -12,7 +12,12 @@
         <form method="POST" action="<c:url value='?action=${actRep}&command=${commUpd}' />">
             <c:import url="_form.jsp" />
         </form>
-
+        <br /><br />
+       <div>
+           <input type="radio">承認
+           <input type="radio">差し戻し
+       </div>
+       <br /><br />
         <p>
             <a href="<c:url value='?action=Report&command=index' />">一覧に戻る</a>
         </p>

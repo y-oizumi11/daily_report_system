@@ -41,24 +41,10 @@ public interface JpaConst {
     String REP_COL_CONTENT = "content"; //日報の内容
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
+    String REP_COL_APPROVED_FLAG = "approvedFlag"; //追記承認フラグ
 
-    //日報テーブル追記
-    String REP_COL_COMFIRMED_AT = "comfirmed_at"; //確認日時
-    String REP_COL_APPROVED_FLAG = "approved_flag";
-    String REP_COL_PENDING_FLAG = "pending_flag";
-    String REP_COL_DISAPPROVED_FLAG = "disapproved_flag";
-
-    //承認済み、追記
-    int REP_APPROVED = 1;
-    int REP_NOT_APPROVED =0;
-
-    //保留、追記
-    int REP_PENDING= 1;
-    int REP_NOT_PENDING =0;
-
-    //差し戻し、追記
-    int REP_DISAPPROVED= 1;
-    int REP_NOT_DISAPPROVED =0;
+    int REP_APPROVED = 1;//承認
+    int REP_PENDING = 0;//保留
 
 
     //Entity名

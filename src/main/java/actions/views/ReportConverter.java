@@ -3,6 +3,8 @@ package actions.views;
 import java.util.ArrayList;
 import java.util.List;
 
+import constants.AttributeConst;
+import constants.JpaConst;
 import models.Report;
 
 /**
@@ -24,7 +26,12 @@ public class ReportConverter {
                 rv.getTitle(),
                 rv.getContent(),
                 rv.getCreatedAt(),
-                rv.getUpdatedAt());
+                rv.getUpdatedAt(),
+                rv.getApprovedFlag() == null
+                ? null
+                : rv.getApprovedFlag() == AttributeConst.REP_APPROVED_TRUE.getIntegerValue()
+                    ? JpaConst.REP_APPROVED
+                    : JpaConst.REP_PENDING);
     }
 
     /**
@@ -45,7 +52,13 @@ public class ReportConverter {
                 r.getTitle(),
                 r.getContent(),
                 r.getCreatedAt(),
-                r.getUpdatedAt());
+                r.getUpdatedAt(),
+                r.getApprovedFlag() == null
+                    ? null
+                    : r.getApprovedFlag() == JpaConst.REP_APPROVED
+                        ? AttributeConst.REP_APPROVED_FLAG.getIntegerValue()
+                        : AttributeConst.REP_APPROVED_PENDING.getIntegerValue()
+                );
     }
 
     /**
@@ -76,6 +89,7 @@ public class ReportConverter {
         r.setContent(rv.getContent());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
+        r.setApprovedFlag(rv.getApprovedFlag());
 
     }
 

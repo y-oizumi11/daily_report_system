@@ -49,22 +49,11 @@ public enum AttributeConst {
     REP_DATE("report_date"),
     REP_TITLE("title"),
     REP_CONTENT("content_msg"),
-    REP_COMFIRM("comfirmed_date"), //追記
+
+    //承認フラグ
     REP_APPROVED_FLAG("approved_flag"),
-    REP_PENDING_FLAG("pending_flag"),
-    REP_DISAPPROVED_FLAG("disapproved_flag"),
-
-    //承認済み、追記
-    REP_APPROVED(1),
-    REP_NOT_APPROVED(0),
-
-    //保留、追記
-    REP_PENDING(1),
-    REP_NOT_PENDING(0),
-
-    //差し戻し、追記
-    REP_DISAPPROVED(1),
-    REP_NOT_DISAPPROVED(0);
+    REP_APPROVED_TRUE(1),
+    REP_APPROVED_PENDING(0);
 
     private final String text;
     private final Integer i;

@@ -52,4 +52,7 @@ public class ReportView {
      * 更新日時
      */
     private LocalDateTime updatedAt;
+
+    //追記承認しているか
+    private Integer approvedFlag;
 }
