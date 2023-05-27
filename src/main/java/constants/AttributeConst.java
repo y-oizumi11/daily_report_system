@@ -52,8 +52,11 @@ public enum AttributeConst {
 
     //承認フラグ
     REP_APPROVED_FLAG("approved_flag"),
+
     REP_APPROVED_TRUE(1),
-    REP_APPROVED_PENDING(0);
+    REP_NOT_APPROVED(0);
+
+
 
     private final String text;
     private final Integer i;

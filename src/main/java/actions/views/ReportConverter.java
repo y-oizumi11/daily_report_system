@@ -31,7 +31,9 @@ public class ReportConverter {
                 ? null
                 : rv.getApprovedFlag() == AttributeConst.REP_APPROVED_TRUE.getIntegerValue()
                     ? JpaConst.REP_APPROVED
-                    : JpaConst.REP_PENDING);
+                    : JpaConst.REP_NOT_APPROVED
+
+                    );
     }
 
     /**
@@ -57,7 +59,8 @@ public class ReportConverter {
                     ? null
                     : r.getApprovedFlag() == JpaConst.REP_APPROVED
                         ? AttributeConst.REP_APPROVED_FLAG.getIntegerValue()
-                        : AttributeConst.REP_APPROVED_PENDING.getIntegerValue()
+                        : AttributeConst.REP_NOT_APPROVED.getIntegerValue()
+
                 );
     }
 

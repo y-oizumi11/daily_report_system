@@ -173,6 +173,7 @@ public class ReportAction extends ActionBase {
      */
     public void edit() throws ServletException, IOException {
 
+
         //idを条件に日報データを取得する
         ReportView rv = service.findOne(toNumber(getRequestParam(AttributeConst.REP_ID)));
 
@@ -192,8 +193,9 @@ public class ReportAction extends ActionBase {
             //編集画面を表示
             forward(ForwardConst.FW_REP_EDIT);
         }
+        }
 
-    }
+
 
     /**
      * 更新を行う

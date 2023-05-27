@@ -55,4 +55,6 @@ public class ReportView {
 
     //追記承認しているか
     private Integer approvedFlag;
+
+
 }
