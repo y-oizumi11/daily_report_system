@@ -209,11 +209,22 @@ public class ReportAction extends ActionBase {
 
             //idを条件に日報データを取得する
             ReportView rv = service.findOne(toNumber(getRequestParam(AttributeConst.REP_ID)));
+            //追記：従業員情報を取得し、一致した場合のみ日報内容を更新する
+            EmployeeView ev = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
 
-            //入力された日報内容を設定する
-            rv.setReportDate(toLocalDate(getRequestParam(AttributeConst.REP_DATE)));
-            rv.setTitle(getRequestParam(AttributeConst.REP_TITLE));
-            rv.setContent(getRequestParam(AttributeConst.REP_CONTENT));
+            if(ev.getId() == rv.getEmployee().getId()) {
+                //入力された日報内容を設定する
+                rv.setReportDate(toLocalDate(getRequestParam(AttributeConst.REP_DATE)));
+                rv.setTitle(getRequestParam(AttributeConst.REP_TITLE));
+                rv.setContent(getRequestParam(AttributeConst.REP_CONTENT));
+
+            }else if(ev.getMgrFlag() == AttributeConst.ROLE_MGR.getIntegerValue()) {
+                    //追記：承認を設定する
+
+                    rv.setApprovedFlag(toNumber(getRequestParam(AttributeConst.REP_APPROVED_FLAG)));
+            }else {
+                forward(ForwardConst.FW_ERR_UNKNOWN);
+            }
 
             //日報データを更新する
             List<String> errors = service.update(rv);

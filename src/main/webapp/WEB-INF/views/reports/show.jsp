@@ -8,6 +8,7 @@
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commEdt" value="${ForwardConst.CMD_EDIT.getValue()}" />
+<c:set var="commUpd" value="${ForwardConst.CMD_UPDATE.getValue()}" />
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
@@ -49,8 +50,16 @@
 
         <c:if test="${sessionScope.login_employee != null}">
              <c:if test="${sessionScope.login_employee.mgrFlag == AttributeConst.ROLE_MGR.getIntegerValue()}">
-                <p>この日報を承認する
-                </p>
+             <form method="POST" action="<c:url value='?action=${actRep}&command=${commUpd}' />">
+                <label for="${AttributeConst.REP_APPROVED_FLAG.getValue()}"></label>
+                <select name="${AttributeConst.REP_APPROVED_FLAG.getValue()}" id="${AttributeConst.REP_APPROVED_FLAG.getValue()}">
+                     <option value="${AttributeConst.REP_NOT_APPROVED.getIntegerValue()}"<c:if test="${report.approvedFlag == AttributeConst.REP_NOT_APPROVED.getIntegerValue()}"> selected</c:if>>未承認</option>
+                     <option value="${AttributeConst.REP_APPROVED_TRUE.getIntegerValue()}"<c:if test="${report.approvedFlag == AttributeConst.REP_APPROVED_TRUE.getIntegerValue()}"> selected</c:if>>承認</option>
+                </select>
+                <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
+                <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
+                <button type="submit">更新</button>
+                 </form>
               </c:if>
          </c:if>
 
