@@ -44,7 +44,7 @@ public interface JpaConst {
     String REP_COL_APPROVED_FLAG = "approvedFlag"; //追記承認フラグ
 
     int REP_APPROVED = 1;//承認
-    int REP_NOT_APPROVED = 0;//保留
+    int REP_NOT_APPROVED = 0;//未承認
 
     //Entity名
     String ENTITY_EMP = "employee"; //従業員

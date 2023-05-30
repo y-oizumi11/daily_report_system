@@ -33,6 +33,12 @@
                         <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
                         <td class="report_title">${report.title}</td>
                         <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
+                        <td class="report_approve">
+                            <c:choose>
+                              <c:when test="${report.approvedFlag == AttributeConst.REP_APPROVED_TRUE}">承認済み</c:when>
+                              <c:otherwise>未承認</c:otherwise>
+                            </c:choose>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
