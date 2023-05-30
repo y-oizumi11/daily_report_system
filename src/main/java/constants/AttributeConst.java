@@ -57,7 +57,6 @@ public enum AttributeConst {
     REP_NOT_APPROVED(0);
 
 
-
     private final String text;
     private final Integer i;
 
